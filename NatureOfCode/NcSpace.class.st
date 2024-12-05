@@ -13,6 +13,12 @@ Class {
 }
 
 { #category : 'accessing' }
+NcSpace class >> center [
+
+	^ self  extent / 2
+]
+
+{ #category : 'accessing' }
 NcSpace class >> extent [ 
 "fixed extent"
 ^ 800@800.
@@ -21,7 +27,7 @@ NcSpace class >> extent [
 { #category : 'accessing' }
 NcSpace >> center [
 
-	^ self class extent / 2
+	^ self class center
 ]
 
 { #category : 'animation' }
