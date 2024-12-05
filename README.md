@@ -1,2 +1,2 @@
 # nature-of-code-pharo
-A Pharo/Bloc port of the exaxmple code from Th Nature of Code book by Daniel Shiffman
+A [Pharo](https://pharo.org/)/[Bloc](https://github.com/pharo-graphics/Bloc) port of the exaxmple code from [The Nature of Code] book by Daniel Shiffman
