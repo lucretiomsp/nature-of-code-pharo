@@ -23,7 +23,7 @@ NcWalker class >> example1 [
 
 
 	walker := self new.
-	walker position: space center.
+	walker position: space centerCoordinates.
 	space root addChild: walker.
 
 	space drawAnimation: [ walker step ]
@@ -50,7 +50,7 @@ NcWalker >> initialize [
 		background: Color red;
 		geometry: BlCircleGeometry new;
 		border: (BlBorder paint: Color white width: 3);
-		position: NcSpace center.
+		position: NcSpace centerCoordinates.
 
 	directions := {
 		              (1 @ 0).

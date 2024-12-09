@@ -13,7 +13,7 @@ Class {
 }
 
 { #category : 'accessing' }
-NcSpace class >> center [
+NcSpace class >> centerCoordinates [
 
 	^ self  extent / 2
 ]
@@ -25,9 +25,9 @@ NcSpace class >> extent [
 ]
 
 { #category : 'accessing' }
-NcSpace >> center [
+NcSpace >> centerCoordinates [
 
-	^ self class center
+	^ self class centerCoordinates
 ]
 
 { #category : 'animation' }
