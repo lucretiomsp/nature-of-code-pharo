@@ -26,6 +26,13 @@ NcLine class >> from: aStartPoint to: anEndPoint [
 	^ line
 ]
 
+{ #category : 'instance creation' }
+NcLine >> from: aStartPoint to: anEndPoint [
+	"change the startPoint and endPoint of the line"
+
+	self geometry:  (self geometry from: aStartPoint to: anEndPoint)
+]
+
 { #category : 'accessing' }
 NcLine >> strokeColor: aColor [
 	"change the width of the line"
