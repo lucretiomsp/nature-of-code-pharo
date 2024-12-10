@@ -4,9 +4,9 @@ Syntactic sugar for an Ellipse element a la p5.js
 Class {
 	#name : 'NcEllipse',
 	#superclass : 'BlElement',
-	#category : 'NatureOfCode-setup',
+	#category : 'NatureOfCode-Shapes',
 	#package : 'NatureOfCode',
-	#tag : 'setup'
+	#tag : 'Shapes'
 }
 
 { #category : 'initialization' }
