@@ -19,9 +19,10 @@ NcSpace class >> centerCoordinates [
 ]
 
 { #category : 'accessing' }
-NcSpace class >> extent [ 
-"fixed extent"
-^ 800@800.
+NcSpace class >> extent [
+	"fixed extent"
+
+	^ 600 @ 600
 ]
 
 { #category : 'accessing' }
@@ -58,6 +59,6 @@ NcSpace >> initialize [
 
 	super initialize.
 	self extent: self class extent.
-	self frameRate: 40.
+	self frameRate: 60.
 	self root background: Color white
 ]

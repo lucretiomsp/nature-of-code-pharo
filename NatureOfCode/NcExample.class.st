@@ -1,5 +1,5 @@
 "
-I contain all the examples
+I contain all the examples as executable scripts on my class side
 "
 Class {
 	#name : 'NcExample',
@@ -9,7 +9,7 @@ Class {
 	#tag : 'examples'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'example' }
 NcExample class >> chapter1Example1 [
 	"a bouncing ball with no vectors"
 
@@ -17,16 +17,17 @@ NcExample class >> chapter1Example1 [
 	| space x y xSpeed ySpeed ball |
 	x := 100.
 	y := 100.
-	xSpeed := 2.5.
-	ySpeed := 2.
+	xSpeed := 6.5.
+	ySpeed := 3.
 	space := NcSpace new.
 	space root background: Color white.
 	ball := NcEllipse new
 		        size: 50 @ 50;
-		        background: Color black;
+		        background: Color darkGray;
+		        border: (BlBorder paint: Color black width: 3);
 		        position: 0 @ 0.
 	space root addChild: ball.
-   space show.
+	space show.
 	space drawAnimation: [ "move the ball according to speed"
 		x := x + xSpeed.
 		y := y + ySpeed.
