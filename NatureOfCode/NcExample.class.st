@@ -14,11 +14,12 @@ NcExample class >> chapter1Example1 [
 	"a bouncing ball with no vectors"
 
 	<script>
-	| space x y xSpeed ySpeed ball |
+	| space x y xSpeed ySpeed ball ballRadius |
 	x := 100.
 	y := 100.
 	xSpeed := 6.5.
 	ySpeed := 3.
+	ballRadius := 25.
 	space := NcSpace new.
 	space root background: Color white.
 	ball := NcEllipse new
@@ -32,8 +33,10 @@ NcExample class >> chapter1Example1 [
 		x := x + xSpeed.
 		y := y + ySpeed.
 		"check for bouncing"
-		(x > space extent x or: x < 0) ifTrue: [ xSpeed := xSpeed * -1 ].
-		(y > space extent y or: y < 0) ifTrue: [ ySpeed := ySpeed * -1 ].
+		(x > (space width - ballRadius) or: x < (0 - ballRadius)) ifTrue: [
+			xSpeed := xSpeed * -1 ].
+		(y > (space height - ballRadius) or: y < (0 - ballRadius)) ifTrue: [
+			ySpeed := ySpeed * -1 ].
 
 		ball position: x @ y
 		"move the ball" ]
