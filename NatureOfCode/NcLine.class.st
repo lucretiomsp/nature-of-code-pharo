@@ -27,6 +27,15 @@ NcLine class >> from: aStartPoint to: anEndPoint [
 ]
 
 { #category : 'accessing' }
+NcLine >> strokeColor: aColor [
+	"change the width of the line"
+
+	| borderWidth |
+	borderWidth := self border width.
+	self border: (BlBorder paint: aColor width: borderWidth)
+]
+
+{ #category : 'accessing' }
 NcLine >> strokeWidth: anInteger [
 "change the width of the line"
 | color |
