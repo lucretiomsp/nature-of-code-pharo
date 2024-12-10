@@ -17,6 +17,14 @@ NcShapesTest >> testNcCircleCreation [
 ]
 
 { #category : 'tests' }
+NcShapesTest >> testNcCircleDiameter [
+
+	| ncCircle |
+	ncCircle := NcCircle new diameter: 30.
+	self assert: ncCircle diameter equals: 30 
+]
+
+{ #category : 'tests' }
 NcShapesTest >> testNcLineCreation [
 
 	| blocLine ncLine |

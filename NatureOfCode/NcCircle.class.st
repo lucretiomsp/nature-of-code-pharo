@@ -15,6 +15,19 @@ Class {
 	#tag : 'Shapes'
 }
 
+{ #category : 'accessing' }
+NcCircle >> diameter [
+
+	^ diameter
+]
+
+{ #category : 'accessing' }
+NcCircle >> diameter: anInteger [ 
+   
+   self extent: anInteger@anInteger.
+	diameter := anInteger
+]
+
 { #category : 'initialization' }
 NcCircle >> initialize [
 
