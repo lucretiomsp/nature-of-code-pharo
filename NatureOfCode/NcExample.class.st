@@ -82,20 +82,27 @@ NcExample class >> chapter1Example3 [
 	"vector subtraction in Pharo we can use Points as p5Vectors, or not?"
 
 	<script>
-	| space mousePosition line1 center line2 |
+	| space mousePosition line1 center line2  line3 |
 	mousePosition := 0 @ 0.
 	center := NcSpace centerCoordinates.
 	space := NcSpace new.
-	line1 := NcLine from: 0 @ 0 to: center.
-	line2 := NcLine from: 100 @ 50 to: mousePosition.
+	line1 := (NcLine from: 0 @ 0 to: center) strokeColor: Color orange.
+	line2 := (NcLine from: 0 @ 0 to: mousePosition) strokeColor:
+		         Color orange.
+	line3 := (NcLine from: 0 @ 0 to: center) strokeColor: Color black.
+	"subtraction Result"
 
 	space root
 		addChild: line1;
-		addChild: line2.
+		addChild: line2;
+		addChild: line3.
 	space show.
 
 	"we dont need to call drawAnimation now"
-	space
-		addEventHandlerOn: BlMouseMoveEvent
-		do: [ :mousePos | line2 from: 0 @ 0 to: mousePos position ]
+	space addEventHandlerOn: BlMouseMoveEvent do: [ :mousePos |
+		line2 from: 0 @ 0 to: mousePos position.
+		line3 from: 0 @ 0 to: mousePos position - center.
+		line3 transform
+			translateBy: 300 @ 300;
+			apply ]
 ]
