@@ -19,5 +19,8 @@ NcShapesTest >> testNcLineCreation [
 	ncLine := (NcLine from: 10 @ 10 to: 200 @ 100)
 		          border: (BlBorder paint: Color lightGreen width: 3);
 		          outskirts: BlOutskirts centered.
-	self assert: blocLine equals: NcLine
+	self assert: blocLine geometry  equals: ncLine geometry.
+
+	self assert: blocLine outskirts  equals: ncLine outskirts .
+	self assert: blocLine border  equals: ncLine border.
 ]
