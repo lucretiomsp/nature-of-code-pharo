@@ -76,3 +76,26 @@ NcExample class >> chapter1Example2 [
 		ball position: position
 		"move the ball" ]
 ]
+
+{ #category : 'example' }
+NcExample class >> chapter1Example3 [
+	"vector subtraction in Pharo we can use Points as p5Vectors, or not?"
+
+	<script>
+	| space mousePosition line1 center line2 |
+	mousePosition := 0 @ 0.
+	center := NcSpace centerCoordinates.
+	space := NcSpace new.
+	line1 := NcLine from: 0 @ 0 to: center.
+	line2 := NcLine from: 100 @ 50 to: mousePosition.
+
+	space root
+		addChild: line1;
+		addChild: line2.
+	space show.
+
+	"we dont need to call drawAnimation now"
+	space
+		addEventHandlerOn: BlMouseMoveEvent
+		do: [ :mousePos | line2 from: 0 @ 0 to: mousePos position ]
+]
