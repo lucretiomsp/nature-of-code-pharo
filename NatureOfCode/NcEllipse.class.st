@@ -1,5 +1,8 @@
 "
-Syntactic sugar for an Ellipse element a la p5.js
+Convenience high level abstraction to draw an Ellipse a la p5js.
+
+NcEllopse new
+creates a black Circle, 10@20 extent , positioned at the center of an NcSpace
 "
 Class {
 	#name : 'NcEllipse',
@@ -12,6 +15,7 @@ Class {
 { #category : 'initialization' }
 NcEllipse >> initialize [
 
-^ BlElement new
-		  geometry: BlCircleGeometry new; yourself 
+	super initialize. 
+	self geometry: BlCircleGeometry new; background: Color black; position: NcSpace  centerCoordinates ; extent: 
+	20@10
 ]

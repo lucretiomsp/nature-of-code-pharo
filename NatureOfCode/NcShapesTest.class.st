@@ -9,11 +9,11 @@ Class {
 { #category : 'tests' }
 NcShapesTest >> testNcCircleCreation [
 
-	| blocCircle ncCircle |
-	blocCircle := BlElement new geometry: BlCircleGeometry new.
+	| blocEllipse ncEllipse |
+	blocEllipse := BlElement new geometry: BlCircleGeometry new.
 
-	ncCircle := NcCircle new.
-	self assert: blocCircle geometry equals: ncCircle geometry
+	ncEllipse := NcCircle new.
+	self assert: blocEllipse geometry equals: ncEllipse geometry
 ]
 
 { #category : 'tests' }
