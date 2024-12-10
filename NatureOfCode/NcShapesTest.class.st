@@ -7,6 +7,16 @@ Class {
 }
 
 { #category : 'tests' }
+NcShapesTest >> testNcCircleCreation [
+
+	| blocCircle ncCircle |
+	blocCircle := BlElement new geometry: BlCircleGeometry new.
+
+	ncCircle := NcCircle new.
+	self assert: blocCircle geometry equals: ncCircle geometry
+]
+
+{ #category : 'tests' }
 NcShapesTest >> testNcLineCreation [
 
 	| blocLine ncLine |
