@@ -205,7 +205,7 @@ NcExample class >> chapter1Example7 [
 	<script>
 	| mover space |
 	space := NcSpace new.
-	mover := NcMover new.
+	mover := NcMover new strokeColor: Color red; strokeWidth: 4.
 	space root addChild: mover.
 	space show.
 	space drawAnimation: [
