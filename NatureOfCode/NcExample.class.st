@@ -164,3 +164,36 @@ NcExample class >> chapter1Example5 [
 			mag := (mousePos position - center )magnitude.
 		rect size: mag @ 40 ]
 ]
+
+{ #category : 'example' }
+NcExample class >> chapter1Example6 [
+	"normalizing a Vector - we implemented a normalize method as en extension of the Point class"
+
+	<script>
+	| space mousePosition line1 center line2 |
+	mousePosition := 0 @ 0.
+
+	center := NcSpace centerCoordinates.
+	space := NcSpace new.
+	line1 := (NcLine from: 0 @ 0 to: center) strokeColor: Color gray.
+	line2 := (NcLine from: 0 @ 0 to: center)
+		         strokeColor: Color black;
+		         strokeWidth: 28.
+
+
+	space root
+		addChild: line1;
+		addChild: line2.
+	space show.
+
+	space addEventHandlerOn: BlMouseMoveEvent do: [ :mousePos |
+		line1 from: 0 @ 0 to: mousePos position - center.
+		line1 transform
+			translateBy: 300 @ 300;
+			apply.
+		"In this example, after the vector is normalized, it’s multiplied by 50. Note that no matter where the mouse is, the vector always has the same length (50) because of the normalization process."
+		line2 from: 0 @ 0 to: (mousePos position - center) normalize * 50.
+		line2 transform
+			translateBy: 300 @ 300;
+			apply ]
+]
