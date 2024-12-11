@@ -140,20 +140,20 @@ NcExample class >> chapter1Example5 [
 	"vector magnitude - we implemented a magnitude method as en extension of the Point class"
 
 	<script>
-	| space mousePosition line1 center line2 mag |
+	| space mousePosition line1 center rect mag |
 	mousePosition := 0 @ 0.
 	mag := 0.
 	center := NcSpace centerCoordinates.
 	space := NcSpace new.
-	line1 := (NcLine from: 0 @ 0 to: center) strokeColor: Color red.
-	line2 := (NcLine from: center to: mousePosition)
-		         strokeColor: Color black;
-		         strokeWidth: 7.
+	line1 := (NcLine from: 0 @ 0 to: center) strokeColor: Color gray.
+	rect := NcRect new
+		        position: 0 @ 0;
+		        size: 200 @ 40.
 
 
 	space root
 		addChild: line1;
-		addChild: line2.
+		addChild: rect.
 	space show.
 
 	space addEventHandlerOn: BlMouseMoveEvent do: [ :mousePos |
@@ -161,8 +161,6 @@ NcExample class >> chapter1Example5 [
 		line1 transform
 			translateBy: 300 @ 300;
 			apply.
-		line2 from: 0 @ 0 to: mousePos position - center * 0.5.
-		line2 transform
-			translateBy: 300 @ 300;
-			apply ]
+			mag := (mousePos position - center )magnitude.
+		rect size: mag @ 40 ]
 ]

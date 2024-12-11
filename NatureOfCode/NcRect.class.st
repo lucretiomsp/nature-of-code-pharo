@@ -13,8 +13,12 @@ Class {
 }
 
 { #category : 'initialization' }
-NcRect >> initialize [ 
+NcRect >> initialize [
 
-super initialize .
-self geometry: BlRectangleGeometry new; size: 60@20 ; position: NcSpace centerCoordinates 
+	super initialize.
+	self
+		geometry: BlRectangleGeometry new;
+		size: 60 @ 20;
+		position: NcSpace centerCoordinates;
+		background: Color black.
 ]
