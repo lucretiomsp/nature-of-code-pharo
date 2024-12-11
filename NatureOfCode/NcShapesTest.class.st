@@ -42,3 +42,13 @@ NcShapesTest >> testNcLineCreation [
 	self assert: blocLine outskirts  equals: ncLine outskirts .
 	self assert: blocLine border  equals: ncLine border.
 ]
+
+{ #category : 'tests' }
+NcShapesTest >> testNcRectCreation [
+
+	| blocRect ncRect |
+	blocRect := BlElement new geometry: BlRectangleGeometry new.
+
+	ncRect := NcCircle new.
+	self assert: blocRect geometry equals: blocRect geometry
+]

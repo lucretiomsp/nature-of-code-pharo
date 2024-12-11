@@ -15,7 +15,10 @@ Class {
 { #category : 'initialization' }
 NcEllipse >> initialize [
 
-	super initialize. 
-	self geometry: BlCircleGeometry new; background: Color black; position: NcSpace  centerCoordinates ; extent: 
-	20@10
+	super initialize.
+	self
+		geometry: BlCircleGeometry new;
+		background: Color black;
+		position: NcSpace centerCoordinates;
+		size: 20 @ 10
 ]

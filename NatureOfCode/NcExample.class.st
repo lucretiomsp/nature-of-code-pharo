@@ -134,3 +134,35 @@ NcExample class >> chapter1Example4 [
 		line2 from: 0@0 to: (mousePos position - center) * 0.5 .
 		line2 transform translateBy: 300@300; apply.]
 ]
+
+{ #category : 'example' }
+NcExample class >> chapter1Example5 [
+	"vector magnitude - we implemented a magnitude method as en extension of the Point class"
+
+	<script>
+	| space mousePosition line1 center line2 mag |
+	mousePosition := 0 @ 0.
+	mag := 0.
+	center := NcSpace centerCoordinates.
+	space := NcSpace new.
+	line1 := (NcLine from: 0 @ 0 to: center) strokeColor: Color red.
+	line2 := (NcLine from: center to: mousePosition)
+		         strokeColor: Color black;
+		         strokeWidth: 7.
+
+
+	space root
+		addChild: line1;
+		addChild: line2.
+	space show.
+
+	space addEventHandlerOn: BlMouseMoveEvent do: [ :mousePos |
+		line1 from: 0 @ 0 to: mousePos position - center.
+		line1 transform
+			translateBy: 300 @ 300;
+			apply.
+		line2 from: 0 @ 0 to: mousePos position - center * 0.5.
+		line2 transform
+			translateBy: 300 @ 300;
+			apply ]
+]

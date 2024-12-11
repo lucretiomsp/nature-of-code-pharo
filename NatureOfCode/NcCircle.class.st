@@ -36,6 +36,5 @@ NcCircle >> initialize [
 		geometry: BlCircleGeometry new;
 		extent: 10 @ 10;
 		background: Color black;
-		position: NcSpace centerCoordinates.
-	
+		size: NcSpace centerCoordinates
 ]
