@@ -6,7 +6,7 @@ creates a black line, 5px border,
 "
 Class {
 	#name : 'NcLine',
-	#superclass : 'BlElement',
+	#superclass : 'NcShape',
 	#category : 'NatureOfCode-Shapes',
 	#package : 'NatureOfCode',
 	#tag : 'Shapes'
@@ -31,21 +31,4 @@ NcLine >> from: aStartPoint to: anEndPoint [
 	"change the startPoint and endPoint of the line"
 
 	self geometry:  (self geometry from: aStartPoint to: anEndPoint)
-]
-
-{ #category : 'accessing' }
-NcLine >> strokeColor: aColor [
-	"change the width of the line"
-
-	| borderWidth |
-	borderWidth := self border width.
-	self border: (BlBorder paint: aColor width: borderWidth)
-]
-
-{ #category : 'accessing' }
-NcLine >> strokeWidth: anInteger [
-"change the width of the line"
-| color |
-color := self border paint.
-self border: (BlBorder paint: color width: anInteger ).
 ]

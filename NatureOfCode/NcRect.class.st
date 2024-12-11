@@ -6,7 +6,7 @@ creates a black Retangle, 160x20 rectangle positioned at the center of an NcSpac
 "
 Class {
 	#name : 'NcRect',
-	#superclass : 'BlElement',
+	#superclass : 'NcShape',
 	#category : 'NatureOfCode-Shapes',
 	#package : 'NatureOfCode',
 	#tag : 'Shapes'

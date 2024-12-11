@@ -6,7 +6,7 @@ creates a black Circle, 10px diameter positioned at the center of an NcSpace
 "
 Class {
 	#name : 'NcCircle',
-	#superclass : 'BlElement',
+	#superclass : 'NcShape',
 	#instVars : [
 		'diameter'
 	],
@@ -37,14 +37,4 @@ NcCircle >> initialize [
 		extent: 10 @ 10;
 		background: Color black;
 		size: NcSpace centerCoordinates
-]
-
-{ #category : 'accessing' }
-NcCircle >> strokeColor: aColor [ 
-	self border: (BlBorder  paint: aColor width: self border width)
-]
-
-{ #category : 'accessing' }
-NcCircle >> strokeWidth: anInteger [ 
-	self border: (BlBorder paint: self border paint width: anInteger) 
 ]

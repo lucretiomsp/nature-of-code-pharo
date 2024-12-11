@@ -6,7 +6,7 @@ creates a black Circle, 10@20 extent , positioned at the center of an NcSpace
 "
 Class {
 	#name : 'NcEllipse',
-	#superclass : 'BlElement',
+	#superclass : 'NcShape',
 	#category : 'NatureOfCode-Shapes',
 	#package : 'NatureOfCode',
 	#tag : 'Shapes'
