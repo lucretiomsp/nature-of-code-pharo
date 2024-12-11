@@ -197,3 +197,18 @@ NcExample class >> chapter1Example6 [
 			translateBy: 300 @ 300;
 			apply ]
 ]
+
+{ #category : 'example' }
+NcExample class >> chapter1Example7 [
+	"motion 101 (velocity)"
+
+	<script>
+	| mover space |
+	space := NcSpace new.
+	mover := NcMover new.
+	space root addChild: mover.
+	space show.
+	space drawAnimation: [
+		mover update.
+		mover checkEdges ]
+]
