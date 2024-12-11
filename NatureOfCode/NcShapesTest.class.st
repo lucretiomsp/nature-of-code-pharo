@@ -7,6 +7,15 @@ Class {
 }
 
 { #category : 'tests' }
+NcShapesTest >> testNcCircleBorder [
+
+	| ncCircle |
+	ncCircle := NcCircle new strokeWidth: 5; strokeColor: Color red.
+	self assert: ncCircle border width equals: 5.
+	self assert: ncCircle border paint color equals: Color red
+]
+
+{ #category : 'tests' }
 NcShapesTest >> testNcCircleCreation [
 
 	| blocEllipse ncEllipse |
