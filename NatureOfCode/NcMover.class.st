@@ -7,12 +7,26 @@ Class {
 	#instVars : [
 		'velocity',
 		'spaceW',
-		'spaceH'
+		'spaceH',
+		'acceleration',
+		'topSpeed'
 	],
 	#category : 'NatureOfCode-Chapter 1',
 	#package : 'NatureOfCode',
 	#tag : 'Chapter 1'
 }
+
+{ #category : 'accessing' }
+NcMover >> acceleration [
+
+	^ acceleration
+]
+
+{ #category : 'accessing' }
+NcMover >> acceleration: aPoint [
+
+	acceleration := aPoint 
+]
 
 { #category : 'updating' }
 NcMover >> checkEdges [
@@ -39,6 +53,10 @@ NcMover >> initialize [
 	velX := Random new nextIntegerBetween: -5 and: 5.
 	velY := Random new nextIntegerBetween: -5 and: 5.
 
+	"both acceleration and topSpeed are vectors. in Pharo we have a min: method for Points that requires a Point as argument, hence we dont need to implement a limit method as in the book"
+	acceleration := -0.001 @ 0.01.
+	topSpeed := 10 @ 10.
+
 	velocity := velX @ velY.
 	self
 		position: posX @ posY;
@@ -57,11 +75,27 @@ NcMover >> spaceW [
 	^ spaceW
 ]
 
+{ #category : 'accessing' }
+NcMover >> topSpeed [
+
+	^ topSpeed
+]
+
+{ #category : 'accessing' }
+NcMover >> topSpeed: anObject [
+
+	topSpeed := anObject
+]
+
 { #category : 'updating' }
 NcMover >> update [
 	"The mover moves"
- 
-	self position: self position + self velocity
+
+	| location |
+	self velocity: self velocity + self acceleration.
+	location := self position + (self velocity min: topSpeed).
+
+	self position: location
 ]
 
 { #category : 'accessing' }

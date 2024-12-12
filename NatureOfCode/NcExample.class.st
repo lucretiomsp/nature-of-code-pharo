@@ -205,7 +205,28 @@ NcExample class >> chapter1Example7 [
 	<script>
 	| mover space |
 	space := NcSpace new.
-	mover := NcMover new strokeColor: Color red; strokeWidth: 4.
+	mover := NcMover new
+		         strokeColor: Color red;
+		         strokeWidth: 4.
+	"in this example there is no acceleration"
+	mover acceleration: 0@0.
+	space root addChild: mover.
+	space show.
+	space drawAnimation: [
+		mover update.
+		mover checkEdges ]
+]
+
+{ #category : 'example' }
+NcExample class >> chapter1Example8 [
+	"motion 101 (velocity and costant acceleration)"
+
+	<script>
+	| mover space |
+	space := NcSpace new.
+	mover := NcMover new
+		         strokeColor: Color red;
+		         strokeWidth: 4.
 	space root addChild: mover.
 	space show.
 	space drawAnimation: [
