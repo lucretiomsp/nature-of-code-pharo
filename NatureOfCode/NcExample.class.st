@@ -233,3 +233,24 @@ NcExample class >> chapter1Example8 [
 		mover update.
 		mover checkEdges ]
 ]
+
+{ #category : 'example' }
+NcExample class >> chapter1Example9 [
+	"motion 101 (velocity and random acceleration)"
+
+	<script>
+	| mover space |
+	space := NcSpace new.
+	mover := NcMover new
+		         strokeColor: Color red;
+		         strokeWidth: 4.
+	space root addChild: mover.
+	space show.
+	space drawAnimation: [ "we randomize the acceleration at every frame"
+		mover acceleration:
+			(Random new nextBetween: -1 and: 1) @ (Random new nextBetween: -1 and: 1)
+			* (Random new nextBetween: 0 and: 2).
+		mover acceleration traceCr.
+		mover update.
+		mover checkEdges ]
+]
