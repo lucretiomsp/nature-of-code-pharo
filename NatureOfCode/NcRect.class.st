@@ -21,4 +21,5 @@ NcRect >> initialize [
 		size: 60 @ 20;
 		position: NcSpace centerCoordinates;
 		background: Color black.
+		
 ]
