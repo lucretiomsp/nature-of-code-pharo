@@ -16,7 +16,7 @@ Class {
 NcWalker class >> example1 [
 <script>
 	| space walker |
-	space := NcSpace new.
+	space := B5Space new.
 	space root background: Color transparent.
 
 	space show.
@@ -50,7 +50,7 @@ NcWalker >> initialize [
 		background: Color red;
 		geometry: BlCircleGeometry new;
 		border: (BlBorder paint: Color white width: 3);
-		position: NcSpace centerCoordinates.
+		position: B5Space centerCoordinates.
 
 	directions := {
 		              (1 @ 0).

@@ -3,7 +3,7 @@ A generic Mover, from the Nature of Code chapter 1
 "
 Class {
 	#name : 'NcMover',
-	#superclass : 'NcCircle',
+	#superclass : 'B5Circle',
 	#instVars : [
 		'velocity',
 		'spaceW',
@@ -46,8 +46,8 @@ NcMover >> initialize [
 
 	| posX posY velX velY |
 	super initialize.
-	spaceW := NcSpace extent x.
-	spaceH := NcSpace extent y.
+	spaceW := B5Space extent x.
+	spaceH := B5Space extent y.
 	posX := Random new nextIntegerBetween: 0 and: spaceW.
 	posY := Random new nextIntegerBetween: 0 and: spaceH.
 	velX := Random new nextIntegerBetween: -5 and: 5.
